@@ -120,6 +120,15 @@ body {
     margin-left: 15%;
     animation: hog 5s infinite alternate;
 }
+.spanview{    
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+.viewimg img{
+    width: 70%;
+    height: 70%;
+}
 @keyframes hog {
     0%{transform: rotatex(10deg);}
     25%{transform: rotatex(50deg);}
@@ -135,7 +144,8 @@ body {
 }
 .viewimg{
     width: 30%;
-    height: 200px;
+    height: max-content;
+    padding: 10px;
     border: 1px solid;
     margin: 30px ;
    

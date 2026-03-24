@@ -53,10 +53,15 @@ fetch('https://opensheet.elk.sh/1w-Yn--2SpJBxab-Yotx2nNVB5yRsEpzkmzdcSLjKTns/itm
         laptop.forEach((items,i) => {
             var div = document.createElement('div')
             var img = document.createElement('img')
+            var span = document.createElement('span')
+            span.innerText =`${items.itmesname}`
+            span.classList = "spanview"
+
             img.src = "./image/whatsapp.png"
             div.classList = "viewimg"
-            div.innerHTML = "dfgrhytjhyjuyk"
+            
             div.prepend(img)
+             div.appendChild(span)
             laptopview.appendChild(div)
             div.addEventListener('click',()=>{
                 document.getElementsByClassName('viewitmes')[0].style.display = "block";
@@ -81,10 +86,20 @@ fetch('https://opensheet.elk.sh/1w-Yn--2SpJBxab-Yotx2nNVB5yRsEpzkmzdcSLjKTns/itm
         laptop1.forEach((items,i) => {
             var div = document.createElement('div')
             var img = document.createElement('img')
+            
+            var span = document.createElement('span')
+            span.innerText =`${items.itmesname}`
+            span.classList = "spanview"
+
+
+
+
+
             img.src = "./image/whatsapp.png"
             div.classList = "viewimg"
-            div.innerHTML = "dfgrhytjhyjuyk"
+            
             div.prepend(img)
+            div.appendChild(span)
             laptopview.appendChild(div)
             div.addEventListener('click',()=>{
                 document.getElementsByClassName('viewitmes')[0].style.display = "block";
