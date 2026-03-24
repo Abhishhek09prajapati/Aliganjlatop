@@ -29,9 +29,9 @@ fetch('https://opensheet.elk.sh/1w-Yn--2SpJBxab-Yotx2nNVB5yRsEpzkmzdcSLjKTns/Lap
         var slideimage = document.getElementById('sildeimg')
 
         var i = 1
-        let columnLength = Object.keys(data[5]).length
+        let columnLength = Object.keys(data[0]).length
         console.log(columnLength)
-        setInterval(imageview, 1100)
+        setInterval(imageview, 1500)
 
         function imageview() {
 
