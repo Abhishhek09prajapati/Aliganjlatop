@@ -10,7 +10,7 @@ fetch('https://opensheet.elk.sh/1w-Yn--2SpJBxab-Yotx2nNVB5yRsEpzkmzdcSLjKTns/Lap
 
         var mainlength = data.filter(e => e.imageServics).length
 
-        for (let i = 1; i < mainlength; i++) {
+        for (let i = 0; i < mainlength; i++) {
             var div = document.createElement('div')
             var image = document.createElement('img')
             var span = document.createElement('span')
@@ -36,7 +36,7 @@ fetch('https://opensheet.elk.sh/1w-Yn--2SpJBxab-Yotx2nNVB5yRsEpzkmzdcSLjKTns/Lap
                 i = 1
             }
             // console.log(i)
-            slideimage.src = `./image/${data[i].image}`
+            slideimage.src = `./image/${data[i].imageServics}`
             i++
         }
 
