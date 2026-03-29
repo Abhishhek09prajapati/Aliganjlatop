@@ -8,24 +8,26 @@ fetch('https://opensheet.elk.sh/1w-Yn--2SpJBxab-Yotx2nNVB5yRsEpzkmzdcSLjKTns/Lap
 
         var servicsCardd = document.getElementById('servcis1')
 
-        data.forEach(servicsCard => {
+        var mainlength = data.filter(e => e.imageServics).length
 
+        for (let i = 1; i < mainlength; i++) {
             var div = document.createElement('div')
             var image = document.createElement('img')
             var span = document.createElement('span')
             image.classList = "serrvicsimage"
             div.classList = "servicsdata"
 
-            image.src = `./image/${servicsCard.imageServics}`
-            span.innerText = `${servicsCard.Servics} - Price:${servicsCard.Price} Upto`
+            image.src = `./image/${data[i].image}`
+            span.innerText = `${data[i].Servics} - Price:${data[i].Price} Upto`
 
             div.appendChild(image)
             div.appendChild(span)
             servicsCardd.appendChild(div)
-        });
+        }
+
         var slideimage = document.getElementById('sildeimg')
-        var i = 1
-        let columnLength = Object.keys(data[0]).length
+        var i = 0
+        let columnLength = data.filter(e=>e.imageServics).length
 
         setInterval(imageview, 1500)
 
@@ -48,27 +50,27 @@ fetch('https://opensheet.elk.sh/1w-Yn--2SpJBxab-Yotx2nNVB5yRsEpzkmzdcSLjKTns/itm
     .then(res => res.json())
     .then(data => {
 
-        const laptop = data.filter(k=>  k.catagories == "laptop")
+        const laptop = data.filter(k => k.catagories == "laptop")
         var laptopview = document.getElementsByClassName('laptopview')[0]
-        laptop.forEach((items,i) => {
+        laptop.forEach((items, i) => {
             var div = document.createElement('div')
             var img = document.createElement('img')
             var span = document.createElement('span')
-            span.innerText =`${items.itmesname}`
+            span.innerText = `${items.itmesname}`
             span.classList = "spanview"
 
             img.src = "./image/whatsapp.png"
             div.classList = "viewimg"
-            
+
             div.prepend(img)
-             div.appendChild(span)
+            div.appendChild(span)
             laptopview.appendChild(div)
-            div.addEventListener('click',()=>{
+            div.addEventListener('click', () => {
                 document.getElementsByClassName('viewitmes')[0].style.display = "block";
                 document.getElementById('viewh1').textContent = `${items.itmesname}`
                 document.getElementById('mrpview').textContent = `${items.mrp}`
                 document.getElementById('paragraph').textContent = `${items.dercription}`
-                
+
             })
         })
     })
@@ -78,17 +80,17 @@ fetch('https://opensheet.elk.sh/1w-Yn--2SpJBxab-Yotx2nNVB5yRsEpzkmzdcSLjKTns/itm
     .then(res => res.json())
     .then(data => {
 
-        const laptop1 = data.filter(k=>  k.catagories == "other")
-        console.log(laptop1)
+        const laptop1 = data.filter(k => k.catagories == "other")
+        // console.log(laptop1)
 
 
         var laptopview = document.getElementsByClassName('laptopview')[1]
-        laptop1.forEach((items,i) => {
+        laptop1.forEach((items, i) => {
             var div = document.createElement('div')
             var img = document.createElement('img')
-            
+
             var span = document.createElement('span')
-            span.innerText =`${items.itmesname}`
+            span.innerText = `${items.itmesname}`
             span.classList = "spanview"
 
 
@@ -97,16 +99,16 @@ fetch('https://opensheet.elk.sh/1w-Yn--2SpJBxab-Yotx2nNVB5yRsEpzkmzdcSLjKTns/itm
 
             img.src = "./image/whatsapp.png"
             div.classList = "viewimg"
-            
+
             div.prepend(img)
             div.appendChild(span)
             laptopview.appendChild(div)
-            div.addEventListener('click',()=>{
+            div.addEventListener('click', () => {
                 document.getElementsByClassName('viewitmes')[0].style.display = "block";
                 document.getElementById('viewh1').textContent = `${items.itmesname}`
                 document.getElementById('mrpview').textContent = `${items.mrp}`
                 document.getElementById('paragraph').textContent = `${items.dercription}`
-                
+
             })
         })
     })
