@@ -32,7 +32,7 @@ fetch('https://opensheet.elk.sh/1w-Yn--2SpJBxab-Yotx2nNVB5yRsEpzkmzdcSLjKTns/Lap
         setInterval(imageview, 1500)
 
         function imageview() {
-            if (i > columnLength) {
+            if (i > columnLength-1) {
                 i = 1
             }
             // console.log(i)
@@ -58,18 +58,27 @@ fetch('https://opensheet.elk.sh/1w-Yn--2SpJBxab-Yotx2nNVB5yRsEpzkmzdcSLjKTns/itm
             var span = document.createElement('span')
             span.innerText = `${items.itmesname}`
             span.classList = "spanview"
+            img.classList = "viewlaptop"
 
-            img.src = "./image/whatsapp.png"
+
+
+            img.src = `/image/${items.itmesimage1}`
             div.classList = "viewimg"
 
             div.prepend(img)
             div.appendChild(span)
             laptopview.appendChild(div)
+
+
+
+
             div.addEventListener('click', () => {
                 document.getElementsByClassName('viewitmes')[0].style.display = "block";
                 document.getElementById('viewh1').textContent = `${items.itmesname}`
                 document.getElementById('mrpview').textContent = `${items.mrp}`
                 document.getElementById('paragraph').textContent = `${items.dercription}`
+                document.getElementById('mainrate').textContent = `${items.rate}`
+                document.getElementById("viewimg").src = `/image/${items.itmesimage1}`
 
             })
         })
@@ -97,17 +106,21 @@ fetch('https://opensheet.elk.sh/1w-Yn--2SpJBxab-Yotx2nNVB5yRsEpzkmzdcSLjKTns/itm
 
 
 
-            img.src = "./image/whatsapp.png"
+            img.src = `/image/${items.itmesimage1}`
             div.classList = "viewimg"
 
             div.prepend(img)
             div.appendChild(span)
             laptopview.appendChild(div)
+
+            
             div.addEventListener('click', () => {
                 document.getElementsByClassName('viewitmes')[0].style.display = "block";
                 document.getElementById('viewh1').textContent = `${items.itmesname}`
                 document.getElementById('mrpview').textContent = `${items.mrp}`
                 document.getElementById('paragraph').textContent = `${items.dercription}`
+                document.getElementById('mainrate').textContent = `${items.rate}`
+                document.getElementById("viewimg").src = `/image/${items.itmesimage1}`
 
             })
         })
