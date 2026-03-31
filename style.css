@@ -142,6 +142,7 @@ body {
 .viewimg img {
     width: 250px;
     height: 200px;
+    
 }
 
 @keyframes hog {
@@ -188,6 +189,7 @@ body {
     margin: 10px;
     border-radius: 20px;
     box-shadow: 1px 2px 5px red;
+    padding: 10px;
 
 }
 
