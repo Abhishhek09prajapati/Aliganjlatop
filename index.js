@@ -27,12 +27,12 @@ fetch('https://opensheet.elk.sh/1w-Yn--2SpJBxab-Yotx2nNVB5yRsEpzkmzdcSLjKTns/Lap
 
         var slideimage = document.getElementById('sildeimg')
         var i = 0
-        let columnLength = data.filter(e=>e.imageServics).length
+        let columnLength = data.filter(e => e.imageServics).length
 
         setInterval(imageview, 1500)
 
         function imageview() {
-            if (i > columnLength-1) {
+            if (i > columnLength - 1) {
                 i = 1
             }
             // console.log(i)
@@ -102,10 +102,6 @@ fetch('https://opensheet.elk.sh/1w-Yn--2SpJBxab-Yotx2nNVB5yRsEpzkmzdcSLjKTns/itm
             span.innerText = `${items.itmesname}`
             span.classList = "spanview"
 
-
-
-
-
             img.src = `/image/${items.itmesimage1}`
             div.classList = "viewimg"
 
@@ -113,7 +109,7 @@ fetch('https://opensheet.elk.sh/1w-Yn--2SpJBxab-Yotx2nNVB5yRsEpzkmzdcSLjKTns/itm
             div.appendChild(span)
             laptopview.appendChild(div)
 
-            
+
             div.addEventListener('click', () => {
                 document.getElementsByClassName('viewitmes')[0].style.display = "block";
                 document.getElementById('viewh1').textContent = `${items.itmesname}`
@@ -123,6 +119,11 @@ fetch('https://opensheet.elk.sh/1w-Yn--2SpJBxab-Yotx2nNVB5yRsEpzkmzdcSLjKTns/itm
                 document.getElementById("viewimg").src = `/image/${items.itmesimage1}`
 
             })
+            document.getElementsByClassName('viewbtn')[0].addEventListener('click', () => {
+                var message1 = `I want to buy this  ${items.itmesname} , Please Reply`
+                window.open(`https://wa.me/916387215755/?text=${message1}`, "_blank")
+            })
+
         })
     })
 
