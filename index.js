@@ -75,9 +75,9 @@ fetch('https://opensheet.elk.sh/1w-Yn--2SpJBxab-Yotx2nNVB5yRsEpzkmzdcSLjKTns/itm
             div.addEventListener('click', () => {
                 document.getElementsByClassName('viewitmes')[0].style.display = "block";
                 document.getElementById('viewh1').textContent = `${items.itmesname}`
-                document.getElementById('mrpview').textContent = `${items.mrp}`
+                document.getElementById('mrpview').textContent = `${items.mrp} `
                 document.getElementById('paragraph').textContent = `${items.dercription}`
-                document.getElementById('mainrate').textContent = `${items.rate}`
+                document.getElementById('mainrate').textContent = ` ${items.rate}`
                 document.getElementById("viewimg").src = `/image/${items.itmesimage1}`
 
             })
